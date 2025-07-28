@@ -194,19 +194,19 @@
   <script>
   const flowers = ["🌸", "🌼", "🌺", "💐", "🌻"];
 
-  function createFlower() {
-    const flower = document.createElement("div");
-    flower.classList.add("flower");
-    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.fontSize = (Math.random() * 15 + 20) + "px";
-    flower.style.animationDuration = (Math.random() * 2 + 3) + "s";
-    document.body.appendChild(flower);
+function createFlower() {
+  const flower = document.createElement("div");
+  flower.classList.add("flower");
+  flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.fontSize = (Math.random() * 15 + 20) + "px";
+  flower.style.animationDuration = (Math.random() * 3 + 5) + "s"; 
+  document.body.appendChild(flower);
 
-    setTimeout(() => flower.remove(), 6000);
-  }
+  setTimeout(() => flower.remove(), 9000);
+}
 
-  setInterval(createFlower, 300);
+setInterval(createFlower, 1500); 
 </script>
 </body>
 </html>
