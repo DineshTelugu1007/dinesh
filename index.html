@@ -192,21 +192,22 @@
     >📍 Tap Me to View Location</a>
   </div>
   <script>
-  const flowers = ["🌸", "🌼", "🌺", "💐", "🌻"];
+  const stars = ["⭐", "✨", "🌟", "💫"];
 
-function createFlower() {
-  const flower = document.createElement("div");
-  flower.classList.add("flower");
-  flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.fontSize = (Math.random() * 15 + 20) + "px";
-  flower.style.animationDuration = (Math.random() * 3 + 5) + "s"; 
-  document.body.appendChild(flower);
+  function createStar() {
+    const star = document.createElement("div");
+    star.classList.add("flower"); // still using same CSS class
+    star.innerText = stars[Math.floor(Math.random() * stars.length)];
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.fontSize = (Math.random() * 10 + 10) + "px"; // smaller stars
+    star.style.animationDuration = (Math.random() * 3 + 5) + "s"; // slower fall
+    document.body.appendChild(star);
 
-  setTimeout(() => flower.remove(), 9000);
-}
+    setTimeout(() => star.remove(), 9000);
+  }
 
-setInterval(createFlower, 1500); 
+  setInterval(createStar, 1500); // slower creation rate
 </script>
+
 </body>
 </html>
