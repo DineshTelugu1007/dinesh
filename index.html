@@ -184,6 +184,10 @@
     <p><strong><span class="label">Date: </span></strong> August 10, Sunday, 2025</p>
     <p><strong><span class="label-time">Time: </span></strong> 12:17 PM</p>
     <p><strong><span class="label-venue">Venue: </span></strong> Pushpa Raju Convention Hall</p>
+    <audio id="bg-music" autoplay loop>
+  <source src="Untitled video - Made with Clipchamp.m4a" type="audio/mpeg">
+</audio>
+
 
     <a
       href="https://maps.app.goo.gl/zXgocdAp5JQxnBZ79"
@@ -192,6 +196,12 @@
     >📍 Tap Me to View Location</a>
   </div>
   <script>
+    document.addEventListener('click', function () {
+    const music = document.getElementById('bg-music');
+    music.play().catch(error => {
+      console.log("Autoplay was prevented:", error);
+    });
+  }, { once: true });
   const stars = ["⭐", "✨", "🌟", "💫"];
 
   function createStar() {
