@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wedding Invitation</title>
-  <!-- Google Font for Title -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -111,6 +109,26 @@
       background-color: rgb(170, 214, 57);
       color: black;
     }
+    .flower {
+  position: fixed;
+  top: -40px;
+  font-size: 24px;
+  pointer-events: none;
+  z-index: 9999; /* HIGH so flowers float above everything */
+  animation: fall linear forwards;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
 
     @media (max-width: 768px) {
       .title {
@@ -173,5 +191,22 @@
       class="location"
     >📍 Tap Me to View Location</a>
   </div>
+  <script>
+  const flowers = ["🌸", "🌼", "🌺", "💐", "🌻"];
+
+  function createFlower() {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.fontSize = (Math.random() * 15 + 20) + "px";
+    flower.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    document.body.appendChild(flower);
+
+    setTimeout(() => flower.remove(), 6000);
+  }
+
+  setInterval(createFlower, 300);
+</script>
 </body>
 </html>
